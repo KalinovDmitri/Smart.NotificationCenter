@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B6F094B3-B555-4EB3-A88F-86D6941A942D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{68BC78D2-C7EE-4799-A7CC-9F7A4EC835F7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{7EF4E540-A0C2-4AA1-AB31-92E25C27C83B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "service", "service", "{BA7D8B0E-6DFD-48D7-9923-DF4ADDE5A933}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "site", "site", "{3EF6FE15-B526-4741-9728-C53EC8B7E5EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scheduler", "scheduler", "{0A84C61C-BA6A-4491-8E24-83F015AA6E3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.NotificationCenter.Data", "src\common\Smart.NotificationCenter.Data\Smart.NotificationCenter.Data.csproj", "{B5E26F8B-7598-406C-A095-4D3F3CBA874D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.NotificationCenter.Data.EF", "src\common\Smart.NotificationCenter.Data.EF\Smart.NotificationCenter.Data.EF.csproj", "{B79718E7-3256-43B8-9CF0-2FACEFE36E52}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.NotificationCenter.Scheduler", "src\scheduler\Smart.NotificationCenter.Scheduler\Smart.NotificationCenter.Scheduler.csproj", "{6A33892D-067F-470D-8458-D9C944EB08D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.NotificationCenter.Service", "src\service\Smart.NotificationCenter.Service\Smart.NotificationCenter.Service.csproj", "{CE5308C1-E694-4668-BD8B-80AC0B193BDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.NotificationCenter.Site", "src\site\Smart.NotificationCenter.Site\Smart.NotificationCenter.Site.csproj", "{92B7FA7F-0FBE-4E68-8B7E-C3BD073014F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.NotificationCenter.ServiceLogic", "src\common\Smart.NotificationCenter.ServiceLogic\Smart.NotificationCenter.ServiceLogic.csproj", "{0552C793-489C-4B97-9D20-3B97C928525B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5E26F8B-7598-406C-A095-4D3F3CBA874D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5E26F8B-7598-406C-A095-4D3F3CBA874D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5E26F8B-7598-406C-A095-4D3F3CBA874D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5E26F8B-7598-406C-A095-4D3F3CBA874D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B79718E7-3256-43B8-9CF0-2FACEFE36E52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B79718E7-3256-43B8-9CF0-2FACEFE36E52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B79718E7-3256-43B8-9CF0-2FACEFE36E52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B79718E7-3256-43B8-9CF0-2FACEFE36E52}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A33892D-067F-470D-8458-D9C944EB08D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A33892D-067F-470D-8458-D9C944EB08D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A33892D-067F-470D-8458-D9C944EB08D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A33892D-067F-470D-8458-D9C944EB08D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE5308C1-E694-4668-BD8B-80AC0B193BDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE5308C1-E694-4668-BD8B-80AC0B193BDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE5308C1-E694-4668-BD8B-80AC0B193BDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE5308C1-E694-4668-BD8B-80AC0B193BDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92B7FA7F-0FBE-4E68-8B7E-C3BD073014F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92B7FA7F-0FBE-4E68-8B7E-C3BD073014F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92B7FA7F-0FBE-4E68-8B7E-C3BD073014F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92B7FA7F-0FBE-4E68-8B7E-C3BD073014F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0552C793-489C-4B97-9D20-3B97C928525B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0552C793-489C-4B97-9D20-3B97C928525B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0552C793-489C-4B97-9D20-3B97C928525B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0552C793-489C-4B97-9D20-3B97C928525B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7EF4E540-A0C2-4AA1-AB31-92E25C27C83B} = {B6F094B3-B555-4EB3-A88F-86D6941A942D}
+		{BA7D8B0E-6DFD-48D7-9923-DF4ADDE5A933} = {B6F094B3-B555-4EB3-A88F-86D6941A942D}
+		{3EF6FE15-B526-4741-9728-C53EC8B7E5EA} = {B6F094B3-B555-4EB3-A88F-86D6941A942D}
+		{0A84C61C-BA6A-4491-8E24-83F015AA6E3D} = {B6F094B3-B555-4EB3-A88F-86D6941A942D}
+		{B5E26F8B-7598-406C-A095-4D3F3CBA874D} = {7EF4E540-A0C2-4AA1-AB31-92E25C27C83B}
+		{B79718E7-3256-43B8-9CF0-2FACEFE36E52} = {7EF4E540-A0C2-4AA1-AB31-92E25C27C83B}
+		{6A33892D-067F-470D-8458-D9C944EB08D6} = {0A84C61C-BA6A-4491-8E24-83F015AA6E3D}
+		{CE5308C1-E694-4668-BD8B-80AC0B193BDC} = {BA7D8B0E-6DFD-48D7-9923-DF4ADDE5A933}
+		{92B7FA7F-0FBE-4E68-8B7E-C3BD073014F5} = {3EF6FE15-B526-4741-9728-C53EC8B7E5EA}
+		{0552C793-489C-4B97-9D20-3B97C928525B} = {7EF4E540-A0C2-4AA1-AB31-92E25C27C83B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {035E8A9B-5AE0-4E87-BF28-12B50B72652F}
+	EndGlobalSection
+EndGlobal
