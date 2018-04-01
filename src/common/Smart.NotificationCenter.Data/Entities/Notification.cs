@@ -2,10 +2,8 @@
 
 namespace Smart.NotificationCenter.Data.Entities
 {
-	public class Notification
+	public class Notification : UpdatableEntity<Guid>
 	{
-		public Guid Id { get; set; }
-
 		public string Title { get; set; }
 
 		public string Body { get; set; }
@@ -21,10 +19,6 @@ namespace Smart.NotificationCenter.Data.Entities
 		public bool IsEnabled { get; set; }
 
 		public Guid RoleId { get; set; }
-
-		public DateTime CreatedAt { get; set; }
-
-		public DateTime UpdatedAt { get; set; }
 
 		public virtual Role UserRole { get; set; }
 	}

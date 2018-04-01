@@ -3,10 +3,8 @@ using System.Collections.Generic;
 
 namespace Smart.NotificationCenter.Data.Entities
 {
-	public class User
+	public class User : UpdatableEntity<Guid>
 	{
-		public Guid Id { get; set; }
-
 		public string AccountName { get; set; }
 
 		public string Email { get; set; }
@@ -16,10 +14,6 @@ namespace Smart.NotificationCenter.Data.Entities
 		public string LastName { get; set; }
 
 		public bool LockedOut { get; set; }
-
-		public DateTime CreatedAt { get; set; }
-
-		public DateTime UpdatedAt { get; set; }
 
 		public virtual ICollection<Role> Roles { get; set; }
 	}

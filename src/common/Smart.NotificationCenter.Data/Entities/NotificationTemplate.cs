@@ -2,10 +2,8 @@
 
 namespace Smart.NotificationCenter.Data.Entities
 {
-	public class NotificationTemplate
+	public class NotificationTemplate : UpdatableEntity<long>
 	{
-		public long Id { get; set; }
-
 		public string Title { get; set; }
 
 		public string Body { get; set; }
@@ -13,9 +11,5 @@ namespace Smart.NotificationCenter.Data.Entities
 		public NotificationSendingType SendingType { get; set; }
 
 		public NotificationType Type { get; set; }
-
-		public DateTime CreatedAt { get; set; }
-
-		public DateTime UpdatedAt { get; set; }
 	}
 }

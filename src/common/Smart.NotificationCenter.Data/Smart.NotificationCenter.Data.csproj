@@ -38,6 +38,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Base\AbstractEntity.cs" />
+    <Compile Include="Entities\Base\BaseEntity.cs" />
+    <Compile Include="Entities\Base\CreatableEntity.cs" />
+    <Compile Include="Entities\Base\UpdatableEntity.cs" />
     <Compile Include="Entities\Notification.cs" />
     <Compile Include="Entities\NotificationSendingType.cs" />
     <Compile Include="Entities\NotificationTemplate.cs" />
