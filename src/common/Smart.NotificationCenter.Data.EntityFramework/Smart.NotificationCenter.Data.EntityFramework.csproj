@@ -49,10 +49,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Mappings\" />
-    <Folder Include="Migrations\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Smart.NotificationCenter.Data\Smart.NotificationCenter.Data.csproj">
       <Project>{b5e26f8b-7598-406c-a095-4d3f3cba874d}</Project>
       <Name>Smart.NotificationCenter.Data</Name>
@@ -64,6 +60,25 @@
     <Compile Include="Framework\SmartDbContext.cs" />
     <Compile Include="Framework\SmartDbSchema.cs" />
     <Compile Include="Framework\UnitOfWork.cs" />
+    <Compile Include="Mappings\Base\AbstractEntityMapper.cs" />
+    <Compile Include="Mappings\Base\BaseEntityMapper.cs" />
+    <Compile Include="Mappings\Base\CreatableEntityMapper.cs" />
+    <Compile Include="Mappings\NotificationMapper.cs" />
+    <Compile Include="Mappings\Base\UpdatableEntityMapper.cs" />
+    <Compile Include="Mappings\Constants.cs" />
+    <Compile Include="Mappings\NotificationTemplateMapper.cs" />
+    <Compile Include="Mappings\RoleMapper.cs" />
+    <Compile Include="Mappings\UserMapper.cs" />
+    <Compile Include="Migrations\201804011700482_InitialMigration.cs" />
+    <Compile Include="Migrations\201804011700482_InitialMigration.Designer.cs">
+      <DependentUpon>201804011700482_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\SmartMigrationsConfiguration.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201804011700482_InitialMigration.resx">
+      <DependentUpon>201804011700482_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
