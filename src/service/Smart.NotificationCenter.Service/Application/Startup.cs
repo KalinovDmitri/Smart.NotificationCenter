@@ -26,6 +26,7 @@ namespace Smart.NotificationCenter.Service
 
 			configuration.DependencyResolver = new UnityDependencyResolver(container);
 
+			DatabaseConfig.Configure();
 			CorsConfig.Configure(configuration);
 			WebApiConfig.Configure(configuration);
 			SwaggerConfig.Configure(configuration);

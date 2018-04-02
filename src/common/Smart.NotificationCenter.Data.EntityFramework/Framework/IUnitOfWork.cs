@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Smart.NotificationCenter.Data.EntityFramework
 {
-	public interface IUnitOfWork<TContext> where TContext : DbContext
+	public interface IUnitOfWork
 	{
 		Task<TResult> ExecuteAsync<TParameter, TResult>(Func<TParameter, TResult> commands, TParameter parameter,
 			IsolationLevel isolationLevel = IsolationLevel.ReadCommitted);

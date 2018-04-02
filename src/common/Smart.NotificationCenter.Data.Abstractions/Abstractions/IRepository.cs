@@ -24,7 +24,9 @@ namespace Smart.NotificationCenter.Data.Abstractions
 		Task<T> FirstOrDefaultAsync(ISpecification<T> specification);
 
 		Task<T> SingleOrDefaultAsync(ISpecification<T> specification);
-		
+
+		IQueryable<T> Query();
+
 		IQueryable<T> Where(ISpecification<T> specification);
 	}
 }

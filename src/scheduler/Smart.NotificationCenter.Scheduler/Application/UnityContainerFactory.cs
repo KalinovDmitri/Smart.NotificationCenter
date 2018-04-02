@@ -6,6 +6,9 @@ using Unity;
 using Unity.Container;
 using Unity.Lifetime;
 
+using Smart.NotificationCenter.Jobs;
+using Smart.NotificationCenter.Jobs.Implementation;
+
 namespace Smart.NotificationCenter.Scheduler
 {
 	internal static class UnityContainerFactory
@@ -16,7 +19,10 @@ namespace Smart.NotificationCenter.Scheduler
 
 			container.RegisterInstance<ILogger>(LogManager.GetLogger("Service"));
 
-			container.RegisterType<QuartzServiceHost>();
+			container.RegisterSingleton<UnityJobFactory>();
+			container.RegisterSingleton<QuartzServiceHost>();
+
+			container.RegisterType<ICustomNotification, CustomNotificationJob>();
 
 			return container;
 		}

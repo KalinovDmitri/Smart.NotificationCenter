@@ -153,10 +153,13 @@
   <ItemGroup>
     <Compile Include="Application\Startup.cs" />
     <Compile Include="Configuration\CorsConfig.cs" />
+    <Compile Include="Configuration\DatabaseConfig.cs" />
     <Compile Include="Configuration\SwaggerConfig.cs" />
     <Compile Include="Configuration\IoCConfig.cs" />
     <Compile Include="Configuration\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\NotificationController.cs" />
+    <Compile Include="EntityFramework\DbContextAccessor.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -174,6 +177,40 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\common\Smart.NotificationCenter.Common\Smart.NotificationCenter.Common.csproj">
+      <Project>{9ece0c4f-f2b6-45c2-b119-dd79a477de96}</Project>
+      <Name>Smart.NotificationCenter.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\common\Smart.NotificationCenter.Data.Abstractions\Smart.NotificationCenter.Data.Abstractions.csproj">
+      <Project>{a31065b6-6498-4098-b03d-f92ba51af350}</Project>
+      <Name>Smart.NotificationCenter.Data.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\common\Smart.NotificationCenter.Data.EntityFramework\Smart.NotificationCenter.Data.EntityFramework.csproj">
+      <Project>{b79718e7-3256-43b8-9cf0-2facefe36e52}</Project>
+      <Name>Smart.NotificationCenter.Data.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\common\Smart.NotificationCenter.Data.Repositories\Smart.NotificationCenter.Data.Repositories.csproj">
+      <Project>{eaa4fb74-f8d9-4659-9a76-93609eeb1e26}</Project>
+      <Name>Smart.NotificationCenter.Data.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\common\Smart.NotificationCenter.Data\Smart.NotificationCenter.Data.csproj">
+      <Project>{b5e26f8b-7598-406c-a095-4d3f3cba874d}</Project>
+      <Name>Smart.NotificationCenter.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\common\Smart.NotificationCenter.Jobs\Smart.NotificationCenter.Jobs.csproj">
+      <Project>{eb02e7ed-843d-42e7-8c3d-133be9f0f2c9}</Project>
+      <Name>Smart.NotificationCenter.Jobs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\common\Smart.NotificationCenter.Service.BusinessLogic\Smart.NotificationCenter.Service.BusinessLogic.csproj">
+      <Project>{0552c793-489c-4b97-9d20-3b97c928525b}</Project>
+      <Name>Smart.NotificationCenter.Service.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\common\Smart.NotificationCenter.Service.Dtos\Smart.NotificationCenter.Service.Dtos.csproj">
+      <Project>{6104a8b3-2cde-4928-9844-b7ff361309b9}</Project>
+      <Name>Smart.NotificationCenter.Service.Dtos</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -6,11 +6,7 @@ namespace Smart.NotificationCenter.Data.EntityFramework
 {
 	public class SmartDbContext : DbContext
 	{
-		public SmartDbContext() : base() { }
-
-		public SmartDbContext(string nameOrConnectionString) : base(nameOrConnectionString) { }
-
-		public SmartDbContext(DbConnection connection, bool contextOwnsConnection) : base(connection, contextOwnsConnection) { }
+		public SmartDbContext() : base("name=SmartDbContext") { }
 
 		protected override void OnModelCreating(DbModelBuilder modelBuilder)
 		{

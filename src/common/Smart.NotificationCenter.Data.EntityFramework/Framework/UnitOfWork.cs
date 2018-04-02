@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace Smart.NotificationCenter.Data.EntityFramework
 {
-	public class UnitOfWork<TContext> : IUnitOfWork<TContext> where TContext : DbContext
+	public class UnitOfWork<TContext> : IUnitOfWork where TContext : DbContext
 	{
-		private readonly IDbContextAccessor<TContext> _contextAccessor;
+		private readonly IDbContextAccessor _contextAccessor;
 
 		protected DbContext Context => _contextAccessor.GetContext();
 
-		public UnitOfWork(IDbContextAccessor<TContext> accessor)
+		public UnitOfWork(IDbContextAccessor accessor)
 		{
 			_contextAccessor = accessor;
 		}
