@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0552C793-489C-4B97-9D20-3B97C928525B}</ProjectGuid>
+    <ProjectGuid>{EAA4FB74-F8D9-4659-9A76-93609EEB1E26}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Smart.NotificationCenter.ServiceLogic</RootNamespace>
-    <AssemblyName>Smart.NotificationCenter.ServiceLogic</AssemblyName>
+    <RootNamespace>Smart.NotificationCenter.Data.Repositories</RootNamespace>
+    <AssemblyName>Smart.NotificationCenter.Data.Repositories</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,23 +32,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="mscorlib" />
-    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\Smart.NotificationCenter.Data.Abstractions\Smart.NotificationCenter.Data.Abstractions.csproj">
+      <Project>{a31065b6-6498-4098-b03d-f92ba51af350}</Project>
+      <Name>Smart.NotificationCenter.Data.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Smart.NotificationCenter.Data.EntityFramework\Smart.NotificationCenter.Data.EntityFramework.csproj">
+      <Project>{b79718e7-3256-43b8-9cf0-2facefe36e52}</Project>
+      <Name>Smart.NotificationCenter.Data.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Smart.NotificationCenter.Data\Smart.NotificationCenter.Data.csproj">
+      <Project>{b5e26f8b-7598-406c-a095-4d3f3cba874d}</Project>
+      <Name>Smart.NotificationCenter.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
