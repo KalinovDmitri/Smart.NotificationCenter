@@ -27,7 +27,13 @@ namespace Smart.NotificationCenter.Scheduler
 				["quartz.jobStore.driverDelegateType"] = "Quartz.Impl.AdoJobStore.SqlServerDelegate, Quartz",
 				["quartz.jobStore.dataSource"] = "SqlServerFullVersion",
 				["quartz.dataSource.SqlServerFullVersion.connectionString"] = ConnectionStrng,
-				["quartz.dataSource.SqlServerFullVersion.provider"] = "SqlServer-20"
+				["quartz.dataSource.SqlServerFullVersion.provider"] = "SqlServer-20",
+				["quartz.scheduler.exporter.type"] = "Quartz.Simpl.RemotingSchedulerExporter, Quartz",
+				["quartz.scheduler.exporter.port"] = "5001",
+				["quartz.scheduler.exporter.bindName"] = "QuartzScheduler",
+				["quartz.scheduler.exporter.channelType"] = "tcp",
+				["quartz.scheduler.exporter.channelName"] = "httpQuartz",
+				["quartz.scheduler.exporter.rejectRemoteRequests"] = "false"
 			};
 
 			var schedulerFactory = new StdSchedulerFactory(configuration);
