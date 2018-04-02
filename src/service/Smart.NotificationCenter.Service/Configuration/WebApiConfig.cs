@@ -7,7 +7,7 @@ namespace Smart.NotificationCenter.Service
 {
 	public static class WebApiConfig
 	{
-		public static void Register(HttpConfiguration config)
+		public static void Configure(HttpConfiguration config)
 		{
 			config.MapHttpAttributeRoutes();
 
