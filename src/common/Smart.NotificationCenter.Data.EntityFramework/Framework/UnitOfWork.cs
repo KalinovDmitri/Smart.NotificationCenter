@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace Smart.NotificationCenter.Data.EntityFramework
 {
-	public class UnitOfWork<TContext> : IUnitOfWork<TContext> where TContext : DbContext
+	public class UnitOfWork<TContext> : IUnitOfWork where TContext : DbContext
 	{
-		private readonly IDbContextAccessor<TContext> _contextAccessor;
+		private readonly IDbContextAccessor _contextAccessor;
 
 		protected DbContext Context => _contextAccessor.GetContext();
 
-		public UnitOfWork(IDbContextAccessor<TContext> accessor)
+		public UnitOfWork(IDbContextAccessor accessor)
 		{
 			_contextAccessor = accessor;
 		}
@@ -44,6 +44,11 @@ namespace Smart.NotificationCenter.Data.EntityFramework
 			IsolationLevel isolationLevel = IsolationLevel.ReadCommitted)
 		{
 			return InternalExecuteAsync(commands, parameter, isolationLevel, false);
+		}
+
+		public Task<int> SaveChangesAsync()
+		{
+			return Context.SaveChangesAsync();
 		}
 
 		private async Task<TResult> InternalExecuteAsync<TResult>(Func<Task<TResult>> commands, IsolationLevel isolationLevel, bool withChanges)

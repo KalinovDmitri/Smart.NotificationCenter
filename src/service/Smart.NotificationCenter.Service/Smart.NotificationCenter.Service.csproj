@@ -1,6 +1,4 @@
 ﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\..\..\packages\Microsoft.Net.Compilers.2.7.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\..\..\packages\Microsoft.Net.Compilers.2.7.0\build\Microsoft.Net.Compilers.props')" />
-  <Import Project="..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -52,9 +50,6 @@
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.8.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -153,10 +148,14 @@
   <ItemGroup>
     <Compile Include="Application\Startup.cs" />
     <Compile Include="Configuration\CorsConfig.cs" />
+    <Compile Include="Configuration\DatabaseConfig.cs" />
     <Compile Include="Configuration\SwaggerConfig.cs" />
     <Compile Include="Configuration\IoCConfig.cs" />
     <Compile Include="Configuration\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\NotificationController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="EntityFramework\DbContextAccessor.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -174,6 +173,40 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\common\Smart.NotificationCenter.Common\Smart.NotificationCenter.Common.csproj">
+      <Project>{9ece0c4f-f2b6-45c2-b119-dd79a477de96}</Project>
+      <Name>Smart.NotificationCenter.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\common\Smart.NotificationCenter.Data.Abstractions\Smart.NotificationCenter.Data.Abstractions.csproj">
+      <Project>{a31065b6-6498-4098-b03d-f92ba51af350}</Project>
+      <Name>Smart.NotificationCenter.Data.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\common\Smart.NotificationCenter.Data.EntityFramework\Smart.NotificationCenter.Data.EntityFramework.csproj">
+      <Project>{b79718e7-3256-43b8-9cf0-2facefe36e52}</Project>
+      <Name>Smart.NotificationCenter.Data.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\common\Smart.NotificationCenter.Data.Repositories\Smart.NotificationCenter.Data.Repositories.csproj">
+      <Project>{eaa4fb74-f8d9-4659-9a76-93609eeb1e26}</Project>
+      <Name>Smart.NotificationCenter.Data.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\common\Smart.NotificationCenter.Data\Smart.NotificationCenter.Data.csproj">
+      <Project>{b5e26f8b-7598-406c-a095-4d3f3cba874d}</Project>
+      <Name>Smart.NotificationCenter.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\common\Smart.NotificationCenter.Jobs\Smart.NotificationCenter.Jobs.csproj">
+      <Project>{eb02e7ed-843d-42e7-8c3d-133be9f0f2c9}</Project>
+      <Name>Smart.NotificationCenter.Jobs</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\common\Smart.NotificationCenter.Service.BusinessLogic\Smart.NotificationCenter.Service.BusinessLogic.csproj">
+      <Project>{0552c793-489c-4b97-9d20-3b97c928525b}</Project>
+      <Name>Smart.NotificationCenter.Service.BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\common\Smart.NotificationCenter.Service.Dtos\Smart.NotificationCenter.Service.Dtos.csproj">
+      <Project>{6104a8b3-2cde-4928-9844-b7ff361309b9}</Project>
+      <Name>Smart.NotificationCenter.Service.Dtos</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -200,13 +233,6 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
-    <Error Condition="!Exists('..\..\..\packages\Microsoft.Net.Compilers.2.7.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\Microsoft.Net.Compilers.2.7.0\build\Microsoft.Net.Compilers.props'))" />
-  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

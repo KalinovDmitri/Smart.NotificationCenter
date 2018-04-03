@@ -31,6 +31,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.NotificationCenter.Si
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.NotificationCenter.Data.Abstractions", "src\common\Smart.NotificationCenter.Data.Abstractions\Smart.NotificationCenter.Data.Abstractions.csproj", "{A31065B6-6498-4098-B03D-F92BA51AF350}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.NotificationCenter.Jobs", "src\common\Smart.NotificationCenter.Jobs\Smart.NotificationCenter.Jobs.csproj", "{EB02E7ED-843D-42E7-8C3D-133BE9F0F2C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.NotificationCenter.Jobs.Implementation", "src\scheduler\Smart.NotificationCenter.Jobs.Implementation\Smart.NotificationCenter.Jobs.Implementation.csproj", "{C85EA45F-60D4-46A6-8042-87238FA561E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.NotificationCenter.Service.Dtos", "src\common\Smart.NotificationCenter.Service.Dtos\Smart.NotificationCenter.Service.Dtos.csproj", "{6104A8B3-2CDE-4928-9844-B7FF361309B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.NotificationCenter.Common", "src\common\Smart.NotificationCenter.Common\Smart.NotificationCenter.Common.csproj", "{9ECE0C4F-F2B6-45C2-B119-DD79A477DE96}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +77,22 @@ Global
 		{A31065B6-6498-4098-B03D-F92BA51AF350}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A31065B6-6498-4098-B03D-F92BA51AF350}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A31065B6-6498-4098-B03D-F92BA51AF350}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB02E7ED-843D-42E7-8C3D-133BE9F0F2C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB02E7ED-843D-42E7-8C3D-133BE9F0F2C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB02E7ED-843D-42E7-8C3D-133BE9F0F2C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB02E7ED-843D-42E7-8C3D-133BE9F0F2C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C85EA45F-60D4-46A6-8042-87238FA561E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C85EA45F-60D4-46A6-8042-87238FA561E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C85EA45F-60D4-46A6-8042-87238FA561E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C85EA45F-60D4-46A6-8042-87238FA561E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6104A8B3-2CDE-4928-9844-B7FF361309B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6104A8B3-2CDE-4928-9844-B7FF361309B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6104A8B3-2CDE-4928-9844-B7FF361309B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6104A8B3-2CDE-4928-9844-B7FF361309B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9ECE0C4F-F2B6-45C2-B119-DD79A477DE96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9ECE0C4F-F2B6-45C2-B119-DD79A477DE96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9ECE0C4F-F2B6-45C2-B119-DD79A477DE96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9ECE0C4F-F2B6-45C2-B119-DD79A477DE96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -86,6 +110,10 @@ Global
 		{CE5308C1-E694-4668-BD8B-80AC0B193BDC} = {BA7D8B0E-6DFD-48D7-9923-DF4ADDE5A933}
 		{92B7FA7F-0FBE-4E68-8B7E-C3BD073014F5} = {3EF6FE15-B526-4741-9728-C53EC8B7E5EA}
 		{A31065B6-6498-4098-B03D-F92BA51AF350} = {7EF4E540-A0C2-4AA1-AB31-92E25C27C83B}
+		{EB02E7ED-843D-42E7-8C3D-133BE9F0F2C9} = {7EF4E540-A0C2-4AA1-AB31-92E25C27C83B}
+		{C85EA45F-60D4-46A6-8042-87238FA561E5} = {0A84C61C-BA6A-4491-8E24-83F015AA6E3D}
+		{6104A8B3-2CDE-4928-9844-B7FF361309B9} = {7EF4E540-A0C2-4AA1-AB31-92E25C27C83B}
+		{9ECE0C4F-F2B6-45C2-B119-DD79A477DE96} = {7EF4E540-A0C2-4AA1-AB31-92E25C27C83B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {035E8A9B-5AE0-4E87-BF28-12B50B72652F}
