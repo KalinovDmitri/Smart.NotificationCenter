@@ -12,8 +12,6 @@ namespace Smart.NotificationCenter.Data.Entities
 
 		public NotificationType Type { get; set; }
 
-		public string CronExpression { get; set; }
-
 		public string JobKey { get; set; }
 
 		public bool IsEnabled { get; set; }

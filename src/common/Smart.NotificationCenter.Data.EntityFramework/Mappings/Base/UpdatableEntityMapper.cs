@@ -19,6 +19,7 @@ namespace Smart.NotificationCenter.Data.Mappings
 
 			entityConfig.Property(x => x.UpdatedAt)
 				.HasColumnOrder(Constants.UpdatedAtColumnOrder)
+				.HasColumnType("datetime2")
 				.IsOptional();
 		}
 	}

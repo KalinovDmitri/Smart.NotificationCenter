@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0552C793-489C-4B97-9D20-3B97C928525B}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Smart.NotificationCenter.ServiceLogic</RootNamespace>
-    <AssemblyName>Smart.NotificationCenter.ServiceLogic</AssemblyName>
+    <RootNamespace>Smart.NotificationCenter.Service</RootNamespace>
+    <AssemblyName>Smart.NotificationCenter.Service.BusinessLogic</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

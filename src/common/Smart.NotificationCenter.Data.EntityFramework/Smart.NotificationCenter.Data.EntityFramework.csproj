@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B79718E7-3256-43B8-9CF0-2FACEFE36E52}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Smart.NotificationCenter.Data.EF</RootNamespace>
-    <AssemblyName>Smart.NotificationCenter.Data.EF</AssemblyName>
+    <RootNamespace>Smart.NotificationCenter.Data</RootNamespace>
+    <AssemblyName>Smart.NotificationCenter.Data.EntityFramework</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -69,16 +69,26 @@
     <Compile Include="Mappings\NotificationTemplateMapper.cs" />
     <Compile Include="Mappings\RoleMapper.cs" />
     <Compile Include="Mappings\UserMapper.cs" />
-    <Compile Include="Migrations\201804011700482_InitialMigration.cs" />
-    <Compile Include="Migrations\201804011700482_InitialMigration.Designer.cs">
-      <DependentUpon>201804011700482_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201804030426109_InitialMigration.cs" />
+    <Compile Include="Migrations\201804030426109_InitialMigration.Designer.cs">
+      <DependentUpon>201804030426109_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804030428592_InitializeQuartz.cs" />
+    <Compile Include="Migrations\201804030428592_InitializeQuartz.Designer.cs">
+      <DependentUpon>201804030428592_InitializeQuartz.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\SmartMigrationsConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201804011700482_InitialMigration.resx">
-      <DependentUpon>201804011700482_InitialMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201804030426109_InitialMigration.resx">
+      <DependentUpon>201804030426109_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804030428592_InitializeQuartz.resx">
+      <DependentUpon>201804030428592_InitializeQuartz.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\QuartzNet_SqlServer_Tables.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
