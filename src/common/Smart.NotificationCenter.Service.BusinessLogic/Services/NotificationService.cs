@@ -17,9 +17,8 @@ using Smart.NotificationCenter.Service.Dtos;
 
 namespace Smart.NotificationCenter.Service.BusinessLogic
 {
-	public class NotificationService : INotificationService
+	public class NotificationService : ApplicationServiceBase, INotificationService
 	{
-		private readonly IUnitOfWork _unitOfWork;
 		private readonly INotificationRepository _notificationRepository;
 		private readonly IJobFactory _jobFactory;
 		private readonly IJobScheduleService _jobScheduleService;
@@ -27,39 +26,29 @@ namespace Smart.NotificationCenter.Service.BusinessLogic
 		public NotificationService(IUnitOfWork unitOfWork,
 			INotificationRepository notificationRepository,
 			IJobFactory jobFactory,
-			IJobScheduleService jobScheduleService)
+			IJobScheduleService jobScheduleService) : base(unitOfWork)
 		{
-			_unitOfWork = unitOfWork;
 			_notificationRepository = notificationRepository;
 			_jobFactory = jobFactory;
 			_jobScheduleService = jobScheduleService;
 		}
 
-		public async Task<IdentityDto<Guid>> CreateCustomNotificationAsync(NotificationDto notification)
+		public async Task<IdentityDto<Guid>> CreateCustomNotificationAsync(NotificationDto notificationDto)
 		{
-			var jobInfo = _jobFactory.CreateJob<ICustomNotification>(notification, "custom");
-			
 			try
 			{
-				var newNotification = await _unitOfWork.ExecuteAsync((NotificationDto dto) =>
-				{
-					return _notificationRepository.Add(new Notification
-					{
-						Title = dto.Title,
-						Body = dto.Body,
-						IsEnabled = true,
-						JobKey = jobInfo.Job.Key.ToString(),
-						RoleId = new Guid("387FA07A-7736-E811-BE00-74D435BBE466"),
-						Type = NotificationType.Custom,
-						CreatedAt = DateTime.UtcNow,
-						CronExpression = "",
-						SendingType = Data.Entities.NotificationSendingType.Email
-					});
-				}, notification);
+				var newNotification = await _unitOfWork.ExecuteAsync(CreateCustomNotificationFromDto, notificationDto);
 
 				try
 				{
+					var jobInfo = _jobFactory.CreateJob<CustomNotificationJob>(notificationDto, newNotification.Id, "custom");
+
 					_jobScheduleService.ScheduleJob(jobInfo);
+
+					string jobKey = jobInfo.Job.Key.ToString();
+					newNotification.JobKey = jobKey;
+
+					await _unitOfWork.SaveChangesAsync();
 				}
 				catch
 				{
@@ -82,17 +71,18 @@ namespace Smart.NotificationCenter.Service.BusinessLogic
 			}
 		}
 
-		private Notification CreateNotificationFromJobInfo(NotificationDto notificationDto)
+		private Notification CreateCustomNotificationFromDto(NotificationDto notificationDto)
 		{
-			var notification = new Notification
+			return _notificationRepository.Add(new Notification
 			{
 				Title = notificationDto.Title,
 				Body = notificationDto.Body,
 				IsEnabled = true,
-				
-			};
-
-			return notification;
+				JobKey = "",
+				RoleId = notificationDto.RoleId,
+				Type = NotificationType.Custom,
+				SendingType = Data.Entities.NotificationSendingType.Email
+			});
 		}
 	}
 }

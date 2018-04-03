@@ -22,7 +22,7 @@ namespace Smart.NotificationCenter.Scheduler
 			container.RegisterSingleton<UnityJobFactory>();
 			container.RegisterSingleton<QuartzServiceHost>();
 
-			container.RegisterType<ICustomNotification, CustomNotificationJob>();
+			container.RegisterType<CustomNotificationJob, CustomNotificationJobImpl>();
 
 			return container;
 		}

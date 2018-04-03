@@ -6,6 +6,6 @@ namespace Smart.NotificationCenter.Service.BusinessLogic
 {
 	public interface IJobFactory
 	{
-		JobInfo CreateJob<TJob>(NotificationDto notification, string group);
+		JobInfo CreateJob<TJob>(NotificationDto notificationInfo, Guid notificationId, string group);
 	}
 }

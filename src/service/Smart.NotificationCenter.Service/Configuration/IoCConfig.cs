@@ -29,11 +29,13 @@ namespace Smart.NotificationCenter.Service
 			container.RegisterSingleton<IUnitOfWork, UnitOfWork<SmartDbContext>>();
 
 			container.RegisterSingleton<INotificationRepository, NotificationRepository>();
+			container.RegisterSingleton<IRoleRepository, RoleRepository>();
 
 			container.RegisterSingleton<IJobFactory, DefaultJobFactory>();
 			container.RegisterSingleton<IJobScheduleService, JobScheduleService>();
 
 			container.RegisterSingleton<INotificationService, NotificationService>();
+			container.RegisterSingleton<IRoleService, RoleService>();
 
 			// TODO: register all types here!
 

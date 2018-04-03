@@ -46,11 +46,6 @@ namespace Smart.NotificationCenter.Data.Mappings
 				.HasColumnType("int")
 				.IsRequired();
 
-			entityConfig.Property(x => x.CronExpression)
-				.HasColumnOrder(columnOrder++)
-				.HasMaxLength(64)
-				.IsRequired();
-
 			entityConfig.Property(x => x.JobKey)
 				.HasColumnOrder(columnOrder++)
 				.HasMaxLength(128)

@@ -46,6 +46,11 @@ namespace Smart.NotificationCenter.Data.EntityFramework
 			return InternalExecuteAsync(commands, parameter, isolationLevel, false);
 		}
 
+		public Task<int> SaveChangesAsync()
+		{
+			return Context.SaveChangesAsync();
+		}
+
 		private async Task<TResult> InternalExecuteAsync<TResult>(Func<Task<TResult>> commands, IsolationLevel isolationLevel, bool withChanges)
 		{
 			TResult result = default(TResult);

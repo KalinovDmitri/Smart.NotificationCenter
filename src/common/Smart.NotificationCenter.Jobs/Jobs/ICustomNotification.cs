@@ -4,5 +4,9 @@ using Quartz;
 
 namespace Smart.NotificationCenter.Jobs
 {
-	public interface ICustomNotification : IJob { }
+	[PersistJobDataAfterExecution]
+	public abstract class CustomNotificationJob : IJob
+	{
+		public abstract void Execute(IJobExecutionContext context);
+	}
 }

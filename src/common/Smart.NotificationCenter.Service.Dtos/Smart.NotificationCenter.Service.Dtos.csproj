@@ -47,6 +47,7 @@
     <Compile Include="Dtos\NotificationRepeatType.cs" />
     <Compile Include="Dtos\NotificationSendingType.cs" />
     <Compile Include="Dtos\NotificationSettings.cs" />
+    <Compile Include="Dtos\RoleDto.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

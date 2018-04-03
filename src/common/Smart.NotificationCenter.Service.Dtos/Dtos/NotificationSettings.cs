@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Smart.NotificationCenter.Service.Dtos
 {
@@ -8,7 +9,11 @@ namespace Smart.NotificationCenter.Service.Dtos
 
 		public NotificationRepeatType RepeatType { get; set; }
 
+		public int? RepeatsCount { get; set; }
+
 		public int? RepeatsEvery { get; set; }
+
+		public List<DayOfWeek> RepeatDays { get; set; }
 
 		public NotificationEndingType EndingType { get; set; }
 

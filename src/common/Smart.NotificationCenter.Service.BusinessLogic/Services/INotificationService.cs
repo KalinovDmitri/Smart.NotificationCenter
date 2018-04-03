@@ -8,6 +8,6 @@ namespace Smart.NotificationCenter.Service.BusinessLogic
 {
 	public interface INotificationService
 	{
-		Task<IdentityDto<Guid>> CreateCustomNotificationAsync(NotificationDto notification);
+		Task<IdentityDto<Guid>> CreateCustomNotificationAsync(NotificationDto notificationDto);
 	}
 }

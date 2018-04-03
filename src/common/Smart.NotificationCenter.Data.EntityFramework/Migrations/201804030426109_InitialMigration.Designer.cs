@@ -13,7 +13,7 @@ namespace Smart.NotificationCenter.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201804011700482_InitialMigration"; }
+            get { return "201804030426109_InitialMigration"; }
         }
         
         string IMigrationMetadata.Source

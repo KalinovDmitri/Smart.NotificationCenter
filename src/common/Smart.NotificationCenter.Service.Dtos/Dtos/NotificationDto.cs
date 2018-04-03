@@ -8,6 +8,8 @@ namespace Smart.NotificationCenter.Service.Dtos
 
 		public string Body { get; set; }
 
+		public Guid RoleId { get; set; }
+
 		public NotificationSettings Settings { get; set; }
 	}
 }

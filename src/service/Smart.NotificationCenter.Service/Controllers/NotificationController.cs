@@ -18,13 +18,14 @@ namespace Smart.NotificationCenter.Service.Controllers
 			_notificationService = notificationService;
 		}
 
-		[Route("custom")]
 		[HttpPost]
-		public async Task<IHttpActionResult> CreateCustomNotification([FromBody] NotificationDto notification)
+		[Route("custom")]
+		[ResponseType(typeof(IdentityDto<Guid>))]
+		public async Task<IHttpActionResult> CreateCustomNotification([FromBody] NotificationDto notificationDto)
 		{
-			await _notificationService.CreateCustomNotificationAsync(notification);
+			var result = await _notificationService.CreateCustomNotificationAsync(notificationDto);
 
-			return Ok();
+			return Json(result);
 		}
 	}
 }

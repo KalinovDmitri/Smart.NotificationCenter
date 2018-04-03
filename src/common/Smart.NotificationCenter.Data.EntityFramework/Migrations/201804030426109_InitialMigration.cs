@@ -18,8 +18,8 @@ namespace Smart.NotificationCenter.Data.Migrations
 					FirstName = c.String(nullable: false, maxLength: 128),
 					LastName = c.String(nullable: false, maxLength: 128),
 					LockedOut = c.Boolean(),
-					CreatedAt = c.DateTime(nullable: false, defaultValueSql: "GETUTCDATE()"),
-					UpdatedAt = c.DateTime(),
+					CreatedAt = c.DateTime(nullable: false, precision: 7, storeType: "datetime2", defaultValueSql: "GETUTCDATE()"),
+					UpdatedAt = c.DateTime(precision: 7, storeType: "datetime2"),
 				})
 				.PrimaryKey(t => t.Id, name: "users_pk_id", clustered: false);
 
@@ -30,8 +30,8 @@ namespace Smart.NotificationCenter.Data.Migrations
 					Id = c.Guid(nullable: false, identity: true),
 					Name = c.String(nullable: false, maxLength: 64),
 					Available = c.Boolean(nullable: false),
-					CreatedAt = c.DateTime(nullable: false, defaultValueSql: "GETUTCDATE()"),
-					UpdatedAt = c.DateTime(),
+					CreatedAt = c.DateTime(nullable: false, precision: 7, storeType: "datetime2", defaultValueSql: "GETUTCDATE()"),
+					UpdatedAt = c.DateTime(precision: 7, storeType: "datetime2"),
 				})
 				.PrimaryKey(t => t.Id, name: "roles_pk_id", clustered: false);
 
@@ -46,10 +46,9 @@ namespace Smart.NotificationCenter.Data.Migrations
 					IsEnabled = c.Boolean(nullable: false),
 					SendingType = c.Int(nullable: false),
 					Type = c.Int(nullable: false),
-					CronExpression = c.String(nullable: false, maxLength: 64),
 					JobKey = c.String(nullable: false, maxLength: 128),
-					CreatedAt = c.DateTime(nullable: false, defaultValueSql: "GETUTCDATE()"),
-					UpdatedAt = c.DateTime(),
+					CreatedAt = c.DateTime(nullable: false, precision: 7, storeType: "datetime2", defaultValueSql: "GETUTCDATE()"),
+					UpdatedAt = c.DateTime(precision: 7, storeType: "datetime2"),
 				})
 				.PrimaryKey(t => t.Id, name: "notifications_pk_id", clustered: false)
 				.ForeignKey("dbo.Roles", t => t.RoleId)
@@ -64,8 +63,8 @@ namespace Smart.NotificationCenter.Data.Migrations
 					Body = c.String(nullable: false),
 					SendingType = c.Int(nullable: false),
 					Type = c.Int(nullable: false),
-					CreatedAt = c.DateTime(nullable: false, defaultValueSql: "GETUTCDATE()"),
-					UpdatedAt = c.DateTime(),
+					CreatedAt = c.DateTime(nullable: false, precision: 7, storeType: "datetime2", defaultValueSql: "GETUTCDATE()"),
+					UpdatedAt = c.DateTime(precision: 7, storeType: "datetime2"),
 				})
 				.PrimaryKey(t => t.Id, name: "notificationtemplates_pk_id", clustered: false);
 

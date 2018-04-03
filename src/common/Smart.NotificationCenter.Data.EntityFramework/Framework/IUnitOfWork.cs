@@ -19,5 +19,7 @@ namespace Smart.NotificationCenter.Data.EntityFramework
 
 		Task<TResult> ReturnAsync<TParameter, TResult>(Func<TParameter, Task<TResult>> commands, TParameter parameter,
 			IsolationLevel isolationLevel = IsolationLevel.ReadCommitted);
+
+		Task<int> SaveChangesAsync();
 	}
 }

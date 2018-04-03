@@ -1,6 +1,7 @@
 ﻿using System;
 
 using Quartz;
+using Quartz.Collection;
 using Quartz.Core;
 using Quartz.Impl;
 
@@ -10,18 +11,21 @@ namespace Smart.NotificationCenter.Service.BusinessLogic
 {
 	public class DefaultJobFactory : IJobFactory
 	{
-		public JobInfo CreateJob<TJob>(NotificationDto notification, string group)
+		public JobInfo CreateJob<TJob>(NotificationDto notificationInfo, Guid notificationId, string group)
 		{
 			IJobDetail jobDetail = JobBuilder.Create()
 				.OfType<TJob>()
-				.WithIdentity(notification.Title, group)
-				.WithDescription(notification.Title)
+				.RequestRecovery(true)
+				.WithIdentity(notificationId.ToString("B"), group)
+				.WithDescription(notificationInfo.Title)
+				.UsingJobData("RoleId", notificationInfo.RoleId.ToString("B"))
+				.UsingJobData("NotificationId", notificationId.ToString("B"))
 				.Build();
 
 			var triggerBuilder = TriggerBuilder.Create()
-				.WithIdentity(notification.Title, group);
+				.WithIdentity(notificationInfo.Title, group);
 
-			ApplySettings(triggerBuilder, notification.Settings);
+			ApplySettings(triggerBuilder, notificationInfo.Settings);
 
 			triggerBuilder.ForJob(jobDetail.Key);
 
@@ -50,15 +54,19 @@ namespace Smart.NotificationCenter.Service.BusinessLogic
 			{
 				if (settings.RepeatType != NotificationRepeatType.NoRepeat)
 				{
+					var repeatCount = settings.RepeatsCount.GetValueOrDefault(0);
+					var repeatInterval = settings.RepeatsEvery.GetValueOrDefault(1);
+
 					switch (settings.RepeatType)
 					{
 						case NotificationRepeatType.Daily:
-							builder.OnEveryDay();
+							builder.OnEveryDay().WithInterval(repeatInterval, IntervalUnit.Hour);
 							break;
 					}
-				}
 
-				builder.WithRepeatCount(settings.RepeatsEvery ?? 1);
+					if (repeatCount != 0)
+						builder.WithRepeatCount(repeatCount);
+				}
 			});
 		}
 	}

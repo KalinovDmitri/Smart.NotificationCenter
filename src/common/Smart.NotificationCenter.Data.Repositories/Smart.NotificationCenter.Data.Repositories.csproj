@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{EAA4FB74-F8D9-4659-9A76-93609EEB1E26}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Smart.NotificationCenter.Data.Repositories</RootNamespace>
+    <RootNamespace>Smart.NotificationCenter.Data</RootNamespace>
     <AssemblyName>Smart.NotificationCenter.Data.Repositories</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -61,7 +61,9 @@
   <ItemGroup>
     <Compile Include="Repositories\Base\BaseRepository.cs" />
     <Compile Include="Repositories\INotificationRepository.cs" />
+    <Compile Include="Repositories\IRoleRepository.cs" />
     <Compile Include="Repositories\NotificationRepository.cs" />
+    <Compile Include="Repositories\RoleRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
