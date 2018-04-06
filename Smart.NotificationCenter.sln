@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.NotificationCenter.Se
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.NotificationCenter.Common", "src\common\Smart.NotificationCenter.Common\Smart.NotificationCenter.Common.csproj", "{9ECE0C4F-F2B6-45C2-B119-DD79A477DE96}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "crystalquartz", "crystalquartz", "{A955ED1D-B207-437B-A500-ECF97AAB02A7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -114,6 +116,7 @@ Global
 		{C85EA45F-60D4-46A6-8042-87238FA561E5} = {0A84C61C-BA6A-4491-8E24-83F015AA6E3D}
 		{6104A8B3-2CDE-4928-9844-B7FF361309B9} = {7EF4E540-A0C2-4AA1-AB31-92E25C27C83B}
 		{9ECE0C4F-F2B6-45C2-B119-DD79A477DE96} = {7EF4E540-A0C2-4AA1-AB31-92E25C27C83B}
+		{A955ED1D-B207-437B-A500-ECF97AAB02A7} = {B6F094B3-B555-4EB3-A88F-86D6941A942D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {035E8A9B-5AE0-4E87-BF28-12B50B72652F}
